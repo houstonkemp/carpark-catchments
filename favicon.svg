@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Globe background -->
+  <circle cx="32" cy="32" r="30" fill="#4A90D9"/>
+  
+  <!-- Longitude lines -->
+  <ellipse cx="32" cy="32" rx="30" ry="30" fill="none" stroke="#2E6BAD" stroke-width="1.5"/>
+  <ellipse cx="32" cy="32" rx="15" ry="30" fill="none" stroke="#2E6BAD" stroke-width="1.5"/>
+  <ellipse cx="32" cy="32" rx="5" ry="30" fill="none" stroke="#2E6BAD" stroke-width="1"/>
+  
+  <!-- Latitude lines -->
+  <line x1="2" y1="32" x2="62" y2="32" stroke="#2E6BAD" stroke-width="1.5"/>
+  <ellipse cx="32" cy="20" rx="26" ry="8" fill="none" stroke="#2E6BAD" stroke-width="1"/>
+  <ellipse cx="32" cy="44" rx="26" ry="8" fill="none" stroke="#2E6BAD" stroke-width="1"/>
+  
+  <!-- Question mark background circle -->
+  <circle cx="32" cy="34" r="18" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Question mark -->
+  <text x="32" y="42" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#4A90D9" text-anchor="middle">?</text>
+</svg>
