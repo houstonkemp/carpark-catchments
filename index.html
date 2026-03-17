@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grocery market concentration</title>
+  <title>Car park concentration</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <style>
@@ -140,7 +140,7 @@
 </head>
 <body>
   <div id="sidebar">
-    <h2>Market concentration</h2>
+    <h2>Car park concentration</h2>
     
     <div class="results-section">
       <h3 id="radius-heading">Radius (5 km)</h3>
@@ -182,19 +182,13 @@
   <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
   <script>
     const brandColours = {
-      COL: "#D32E2B",
-      WOW: "#34883D", 
-      ALD: "#17197A",
-      IGA: "#30302f",
-      HFM: "#FFD700"
+      CP: "#E31837",
+      WIL: "#1B3A6B"
     };
     
     const brandNames = {
-      COL: "Coles",
-      WOW: "Woolworths",
-      ALD: "Aldi",
-      IGA: "IGA",
-      HFM: "Harris Farm"
+      CP: "Care Park",
+      WIL: "Wilson Parking"
     };
 
     const HEREWEGO = "__HERE_API_KEY__";
@@ -225,7 +219,7 @@
         addStoresToMap(data);
         updateMap(L.latLng(-37.8176, 144.9594))
       })
-      .catch(err => console.error('Error loading stores:', err));
+      .catch(err => console.error('Error loading car parks:', err));
 
     function addStoresToMap(stores) {
       stores.forEach(store => {
@@ -267,7 +261,7 @@
 
     function makeTable(shares) {
       if (shares.length === 0) {
-        return '<p class="no-data">No stores in area</p>';
+        return '<p class="no-data">No car parks in area</p>';
       }
       
       let rows = shares.map(s => `
@@ -283,7 +277,7 @@
       return `
         <table class="results-table">
           <thead>
-            <tr><th>Brand</th><th>Stores</th><th>Share</th></tr>
+            <tr><th>Operator</th><th>Car parks</th><th>Share</th></tr>
           </thead>
           <tbody>${rows}</tbody>
           <tfoot>
